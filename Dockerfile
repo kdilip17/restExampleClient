@@ -4,8 +4,6 @@ MAINTAINER Dilip Kumar <dilipkumar@hakunamatata.in>
 
 COPY . /usr/src/app/
 RUN cd /usr/src/app
-RUN pwd
-RUN ls
 RUN npm install
 
 ENV MODE dev
