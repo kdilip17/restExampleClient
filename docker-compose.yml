@@ -3,5 +3,4 @@ restExample:
   ports:
     - 4041:4041
   command: "node RestIndex.js"
-  expose: [4041]
   container_name: restExample
