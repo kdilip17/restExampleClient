@@ -1,0 +1,6 @@
+restExample:
+  image: test/rest:v1
+  ports:
+    - 4041:4041
+  command: "node RestIndex.js"
+  container_name: restExample

@@ -1,6 +1,19 @@
-restExample:
-  image: test/rest:v1
-  ports:
-    - 4041:4041
-  command: "node RestIndex.js"
-  container_name: restExample
+version: "3"
+services:
+  restExample:
+    image: test/rest:v1
+    ports:
+      - 4041:4041
+    networks:
+      vpcbr:
+        ipv4_address: 172.17.0.24
+    command: "node RestIndex.js"
+    container_name: restExample
+
+  networks:
+    vpcbr:
+      driver: bridge
+      ipam:
+       config:
+         - subnet: 172.17.0.0/16
+           gateway: 172.17.0.24
