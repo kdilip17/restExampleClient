@@ -1,18 +1,18 @@
 services:
-  restExample:
-    image: test/rest:v1
-    ports:
-      - 4041:4041
-    networks:
-      vpcbr:
-        ipv4_address: 172.17.0.24
-    command: "node RestIndex.js"
+  rest:
     container_name: restExample
+    image: test/rest:v1
+    restart: on-failure
+    ports:
+      - 4038:4038
+    networks:
+      - vpcbr
 
-  networks:
-    vpcbr:
+networks:
+  vpcbr:
       driver: bridge
       ipam:
-       config:
-         - subnet: 172.17.0.0/16
-           gateway: 172.17.0.24
+         config:
+           - subnet: 172.17.0.0/16
+             gateway: 172.17.0.24
+
