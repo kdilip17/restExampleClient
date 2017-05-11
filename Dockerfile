@@ -1,4 +1,4 @@
-FROM harbor.liad.in:5000/alpinenode:latest
+FROM ubuntu/node:v1
 
 MAINTAINER Dilip Kumar <dilipkumar@hakunamatata.in>
 
