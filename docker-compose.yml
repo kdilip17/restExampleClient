@@ -1,6 +1,6 @@
 services:
   rest:
-    container_name: restExample
+    container_name: rest
     image: test/rest:v1
     restart: on-failure
     ports:
