@@ -8,13 +8,17 @@ services:
       - 4038:4038
     networks:
        vpcbr:
-          ipv4_address: 172.17.0.24/24
+          ipv4_address: 172.17.0.24
 
 networks:
   vpcbr:
       driver: bridge
+      driver_opts:
+        com.docker.network.enable_ipv6: "true"
+        com.docker.network.bridge.enable_ip_masquerade: "false"
       ipam:
+         driver: default
          config:
-           - subnet: 172.17.0.1/24
+           - subnet: 172.17.0.1/16
              gateway: 172.17.0.40
 
