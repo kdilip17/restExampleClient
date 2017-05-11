@@ -1,4 +1,3 @@
-version: "3"
 services:
   restExample:
     image: test/rest:v1
