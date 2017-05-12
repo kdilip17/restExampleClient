@@ -1,18 +1,7 @@
-version: '2.0'
-services:
-  nginx:
-    image: test/rest:v1
-    command: "node RestIndex.js"
-    container_name: nginx-container
-    ports:
-      - 4038:4038
-    networks:
-      static-network:
-        ipv4_address: 172.20.128.2
-networks:
-  static-network:
-    ipam:
-      config:
-        - subnet: 172.17.0.0/16
-          ip_range: 172.28.5.0/24
+restExample:
+  image: test/rest:v1
+  ports:
+    - 4038:4038
+  command: "node RestIndex.js"
+  container_name: restExample
 
