@@ -3,6 +3,8 @@ services:
   nginx:
     image: test/rest:v1
     container_name: nginx-container
+    ports:
+      - 4038:4038
     networks:
       static-network:
         ipv4_address: 172.20.128.2
