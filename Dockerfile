@@ -10,7 +10,7 @@ ENV MODE dev
 WORKDIR /usr/src/app
 
 
-EXPOSE 4041
+EXPOSE 4038
 
 #CMD ["node", "RESTLauncher.js"]
 
