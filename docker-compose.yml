@@ -1,24 +1,15 @@
-version: "2.0"
+version: '2.0'
 services:
-  rest:
-    container_name: rest
+  nginx:
     image: test/rest:v1
-    restart: on-failure
-    ports:
-      - 4038:4038
+    container_name: nginx-container
     networks:
-       vpcbr:
-         ipv4_address: 192.168.0.1
-
+      static-network:
+        ipv4_address: 172.20.128.2
 networks:
-  vpcbr:
-    driver: bridge
-    driver_opts:
-      com.docker.network.enable_ipv6: "true"
-      com.docker.network.bridge.enable_ip_masquerade: "false"
+  static-network:
     ipam:
-      driver: default
       config:
-        - subnet: 192.168.0.1/16
-          gateway: 192.168.0.40
+        - subnet: 172.20.0.0/16
+          ip_range: 172.28.5.0/24
 

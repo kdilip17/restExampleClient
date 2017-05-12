@@ -4,3 +4,30 @@ restExample:
     - 4041:4041
   command: "node RestIndex.js"
   container_name: restExample
+
+
+
+
+version: "2.0"
+services:
+  rest:
+    container_name: rest
+    image: test/rest:v1
+    restart: on-failure
+    ports:
+      - 4038:4038
+    networks:
+       vpcbr:
+         ipv4_address: 192.168.0.1
+
+networks:
+  vpcbr:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.1/16
+          gateway: 192.168.0.40
