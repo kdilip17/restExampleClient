@@ -1,4 +1,4 @@
-restExample:
+rest-ex:
   image: test/rest:v1
   ports:
     - 4038
