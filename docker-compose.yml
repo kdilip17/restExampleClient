@@ -2,6 +2,7 @@ version: '2.0'
 services:
   nginx:
     image: test/rest:v1
+    command: "node RestIndex.js"
     container_name: nginx-container
     ports:
       - 4038:4038
