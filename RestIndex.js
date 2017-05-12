@@ -14,7 +14,7 @@ const Hapi = require('hapi');
 const server = new Hapi.Server();
 server.connection({
     host: '0.0.0.0',
-    port: 4041
+    port: 4038
 });
 
 // Add the route
