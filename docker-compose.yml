@@ -5,7 +5,7 @@ services:
     container_name: nginx-container
     networks:
       static-network:
-        ipv4_address: 172.17.0.5
+        ipv4_address: 172.17.128.2
 networks:
   static-network:
     ipam:
