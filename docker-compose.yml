@@ -1,7 +1,8 @@
 restExample:
   image: test/rest:v1
   ports:
-    - 4038:4038
+    - 4038
   command: "node RestIndex.js"
-  container_name: restExample
+  environment:
+    - SERVICE_NAME=rest-ex
 
