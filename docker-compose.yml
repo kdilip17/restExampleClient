@@ -5,4 +5,5 @@ rest-ex:
   command: "node RestIndex.js"
   environment:
     - SERVICE_NAME=rest-ex
+  command: 'consul-template -consul-addr="localhost:8500" -template="/data/consul-template/rest-ex.ctmpl:/data/nginx/upstreams/rest-ex.conf:docker kill -s HUP nginx"'
 
