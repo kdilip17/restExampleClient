@@ -25,5 +25,9 @@ server.start((err) => {
     if (err) {
         console.log(err)
     }
+    console.log(server.info)
+    console.log(server.info)
+    console.log(server.info)
+    console.log(server.info)
     console.log('Server running at:', server.info.uri);
 });
